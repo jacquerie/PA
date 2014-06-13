@@ -4,6 +4,8 @@ public class ExpExpr implements Expr {
 		this.exponent = exponent;
 	}
 
+	public void apply (double value) {};
+
 	public String compile () {
 		return "exp(" + exponent.compile() + ")";
 	}

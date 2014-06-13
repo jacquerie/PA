@@ -5,6 +5,8 @@ public class AddExpr implements Expr {
 		this.second = second;
 	}
 
+	public void apply (double value) {};
+
 	public String compile () {
 		return "(" + this.first.compile() + " + " + this.second.compile() + ")";
 	}

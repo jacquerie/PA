@@ -1,9 +1,11 @@
-public class MultExpr implements Expr {
+public class MulExpr implements Expr {
 
-	public MultExpr (Expr first, Expr second) {
+	public MulExpr (Expr first, Expr second) {
 		this.first = first;
 		this.second = second;
 	}
+
+	public void apply (double value) {};
 
 	public String compile () {
 		return "(" + this.first.compile() + " * " + this.second.compile() + ")";

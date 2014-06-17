@@ -1,5 +1,5 @@
-public class ExpExpr extends UnaryExpr {
-	public ExpExpr (Expr argument) {
+public class NegExpr extends UnaryExpr {
+	public NegExpr (Expr argument) {
 		this.argument = argument;
 	}
 
@@ -10,13 +10,10 @@ public class ExpExpr extends UnaryExpr {
 	}
 
 	public String compile () {
-		return "exp(" + this.argument.compile() + ")";
+		return "- (" + this.argument.compile() + ")";
 	}
 
 	public Expr differentiate (Expr dx) {
-		return new MulExpr(
-			new ExpExpr(this.argument),
-			this.argument.differentiate(dx)
-		);
+		return new NegExpr(this.argument.differentiate(dx));
 	}
 }

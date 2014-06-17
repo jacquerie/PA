@@ -4,6 +4,13 @@ public class SubExpr extends BinaryExpr {
 		this.second = second;
 	}
 
+	public Expr differentiate (Expr dx) {
+		return new SubExpr(
+			this.first.differentiate(dx),
+			this.second.differentiate(dx)
+		);
+	}
+
 	public String operator () {
 		return " - ";
 	}

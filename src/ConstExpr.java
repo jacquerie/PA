@@ -11,5 +11,9 @@ public class ConstExpr extends Expr {
 		return Double.toString(this.value);
 	}
 
+	public Expr differentiate (Expr dx) {
+		return new ConstExpr(0);
+	}
+
 	private double value;
 }

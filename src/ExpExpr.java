@@ -13,5 +13,12 @@ public class ExpExpr extends Expr {
 		return "exp(" + this.argument.compile() + ")";
 	}
 
+	public Expr differentiate (Expr dx) {
+		return new MulExpr(
+			new ExpExpr(this.argument),
+			this.argument.differentiate(dx)
+		);
+	}
+
 	private Expr argument;
 }

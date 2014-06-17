@@ -2,6 +2,7 @@ public class Main {
 	public static void main (String[] args) {
 		exerciseOne();
 		exerciseTwo();
+		exerciseThree();
 	}
 
 	private static void exerciseOne () {
@@ -22,5 +23,18 @@ public class Main {
 		Expr e = new MulExpr(new MulExpr(new ConstExpr(2), x), new ExpExpr(y));
 
 		System.out.println(e.compile());
+	}
+
+	private static void exerciseThree () {
+		Expr x = new DoubleExpr("x");
+		Expr y = new DoubleExpr("y");
+		Expr e = new MulExpr(new MulExpr(new ConstExpr(2), x), new ExpExpr(y));
+
+		Expr[] args = { x, y };
+		Function f = new Function(args, e);
+		Function df = f.differentiate(x);
+		Expr v = df.apply(1.5, 2.5);
+
+		System.out.println(v.compile());
 	}
 }

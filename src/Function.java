@@ -12,6 +12,13 @@ public class Function {
 		return this.expression;
 	}
 
+	public Function differentiate (Expr dx) {
+		return new Function(
+			this.arguments,
+			this.expression.differentiate(dx)
+		);
+	}
+
 	private Expr[] arguments;
 	private Expr expression;
 }

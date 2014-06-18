@@ -15,5 +15,13 @@ public class DoubleExpr extends Expr {
 		return (dx == this) ? new ConstExpr(1) : new ConstExpr(0);
 	}
 
+	public Expr simplify () {
+		return this;
+	}
+
+	public Expr simplify (BinaryExpr parent, Expr sibling) {
+		return parent;
+	}
+
 	private String name;
 }

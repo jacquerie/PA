@@ -39,7 +39,18 @@ public class Main {
 		System.out.println(z.compile());
 	}
 
-	private static void exerciseFour () {}
+	private static void exerciseFour () {
+		Expr x = new DoubleExpr("x");
+		Expr y = new DoubleExpr("y");
+		Expr e = x.mul(new ConstExpr(2)).mul(new ExpExpr(y));
+
+		Expr[] args = { x, y };
+		Function f = new Function(args, e);
+		Function df = f.differentiate(x);
+		Expr z = df.apply(0.0);
+
+		System.out.println(z.simplify().compile());
+	}
 
 	private static void exerciseFive () {}
 }

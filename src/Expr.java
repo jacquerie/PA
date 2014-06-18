@@ -2,6 +2,12 @@ public abstract class Expr {
 	public abstract Expr apply (Expr target, double value);
 	public abstract String compile ();
 	public abstract Expr differentiate (Expr dx);
+	public abstract Expr simplify ();
+	public abstract Expr simplify (BinaryExpr parent, Expr sibling);
+
+	public Expr simplify (BinaryExpr parent, ConstExpr sibling) {
+		return sibling.simplify(parent, this);
+	}
 
 	public Expr add (Expr other) {
 		return new AddExpr(this, other);

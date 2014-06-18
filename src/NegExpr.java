@@ -10,7 +10,7 @@ public class NegExpr extends UnaryExpr {
 	}
 
 	public String compile () {
-		return "- (" + this.argument.compile() + ")";
+		return "-(" + this.argument.compile() + ")";
 	}
 
 	public Expr differentiate (Expr dx) {

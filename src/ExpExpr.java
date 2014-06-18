@@ -1,6 +1,6 @@
 public class ExpExpr extends UnaryExpr {
 	public ExpExpr (Expr argument) {
-		this.argument = argument;
+		super(argument);
 	}
 
 	public Expr apply (Expr target, double value) {

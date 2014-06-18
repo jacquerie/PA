@@ -3,12 +3,14 @@ public class Main {
 		exerciseOne();
 		exerciseTwo();
 		exerciseThree();
+		exerciseFour();
+		exerciseFive();
 	}
 
 	private static void exerciseOne () {
 		Expr x = new DoubleExpr("x");
 		Expr y = new DoubleExpr("y");
-		Expr e = new AddExpr(x, y);
+		Expr e = x.add(y);
 
 		Expr[] args = { x, y };
 		Function f = new Function(args, e);
@@ -20,7 +22,7 @@ public class Main {
 	private static void exerciseTwo () {
 		Expr x = new DoubleExpr("x");
 		Expr y = new DoubleExpr("y");
-		Expr e = new MulExpr(new MulExpr(new ConstExpr(2), x), new ExpExpr(y));
+		Expr e = x.mul(new ConstExpr(2)).mul(new ExpExpr(y));
 
 		System.out.println(e.compile());
 	}
@@ -28,13 +30,16 @@ public class Main {
 	private static void exerciseThree () {
 		Expr x = new DoubleExpr("x");
 		Expr y = new DoubleExpr("y");
-		Expr e = new MulExpr(new MulExpr(new ConstExpr(2), x), new ExpExpr(y));
 
 		Expr[] args = { x, y };
-		Function f = new Function(args, e);
+		Function f = new Function(args, x.mul(new ConstExpr(2)).mul(new ExpExpr(y)));
 		Function df = f.differentiate(x);
-		Expr v = df.apply(1.5, 2.5);
+		Expr z = df.apply(1.5, 2.5);
 
-		System.out.println(v.compile());
+		System.out.println(z.compile());
 	}
+
+	private static void exerciseFour () {}
+
+	private static void exerciseFive () {}
 }

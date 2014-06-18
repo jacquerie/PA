@@ -1,6 +1,6 @@
 public class NegExpr extends UnaryExpr {
 	public NegExpr (Expr argument) {
-		this.argument = argument;
+		super(argument);
 	}
 
 	public Expr apply (Expr target, double value) {

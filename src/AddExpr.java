@@ -1,7 +1,6 @@
 public class AddExpr extends BinaryExpr {
 	public AddExpr (Expr first, Expr second) {
-		this.first = first;
-		this.second = second;
+		super(first, second);
 	}
 
 	public Expr differentiate (Expr dx) {
@@ -11,7 +10,7 @@ public class AddExpr extends BinaryExpr {
 		);
 	}
 
-	public String operator () {
+	protected String operator () {
 		return " + ";
 	}
 }

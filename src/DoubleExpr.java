@@ -19,6 +19,10 @@ public class DoubleExpr extends Expr {
 		return this;
 	}
 
+	public Expr simplify (UnaryExpr parent) {
+		return parent;
+	}
+
 	public Expr simplify (BinaryExpr parent, Expr sibling) {
 		return parent;
 	}

@@ -19,4 +19,8 @@ public class ExpExpr extends UnaryExpr {
 			this.argument.differentiate(dx)
 		);
 	}
+
+	public Expr simplify (UnaryExpr parent) {
+		return parent;
+	}
 }

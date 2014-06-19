@@ -3,6 +3,7 @@ public abstract class Expr {
 	public abstract String compile ();
 	public abstract Expr differentiate (Expr dx);
 	public abstract Expr simplify ();
+	public abstract Expr simplify (UnaryExpr parent);
 	public abstract Expr simplify (BinaryExpr parent, Expr sibling);
 
 	public Expr simplify (BinaryExpr parent, ConstExpr sibling) {

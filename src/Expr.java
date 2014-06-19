@@ -6,10 +6,6 @@ public abstract class Expr {
 	public abstract Expr simplify (UnaryExpr parent);
 	public abstract Expr simplify (BinaryExpr parent, Expr sibling);
 
-	public Expr simplify (BinaryExpr parent, ConstExpr sibling) {
-		return sibling.simplify(parent, this);
-	}
-
 	public Expr add (Expr other) {
 		return new AddExpr(this, other);
 	}

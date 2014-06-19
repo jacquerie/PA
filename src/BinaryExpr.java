@@ -19,7 +19,7 @@ public abstract class BinaryExpr extends Expr {
 		this.first = this.first.simplify();
 		this.second = this.second.simplify();
 
-		return this.first.simplify(this, this.second);
+		return this.second.simplify(this, this.first);
 	}
 
 	public Expr simplify (UnaryExpr parent) {

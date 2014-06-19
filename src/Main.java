@@ -30,9 +30,10 @@ public class Main {
 	private static void exerciseThree () {
 		Expr x = new DoubleExpr("x");
 		Expr y = new DoubleExpr("y");
+		Expr e = x.mul(new ConstExpr(2)).mul(new ExpExpr(y));
 
 		Expr[] args = { x, y };
-		Function f = new Function(args, x.mul(new ConstExpr(2)).mul(new ExpExpr(y)));
+		Function f = new Function(args, e);
 		Function df = f.differentiate(x);
 		Expr z = df.apply(1.5, 2.5);
 
@@ -47,7 +48,7 @@ public class Main {
 		Expr[] args = { x, y };
 		Function f = new Function(args, e);
 		Function df = f.differentiate(x);
-		Expr z = df.apply(0.0);
+		Expr z = df.apply(1.5, 2.5);
 
 		System.out.println(z.simplify().compile());
 	}

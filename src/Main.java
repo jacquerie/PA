@@ -53,5 +53,24 @@ public class Main {
 		System.out.println(z.simplify().compile());
 	}
 
-	private static void exerciseFive () {}
+	private static void exerciseFive () {
+		Expr x = new DoubleExpr("x");
+		Expr y = new DoubleExpr("y");
+		Expr z = new DoubleExpr("z");
+		Expr[] args = { x, y, z };
+
+		VectorExpr v1 = new VectorExpr(3);
+		VectorExpr v2 = new VectorExpr(3);
+		VectorExpr v3 = new VectorExpr(3);
+
+		for (int i = 0; i < 3; i++) {
+			v1.elements.add(i, args[i]);
+			v2.elements.add(i, args[(i + 1) % 3]);
+			v3.elements.add(i, args[(i + 2) % 3]);
+		}
+
+		Expr s = v1.add(v2).add(v3);
+
+		System.out.println(s.simplify().compile());
+	}
 }

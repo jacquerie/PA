@@ -9,6 +9,10 @@ public abstract class UnaryExpr extends Expr {
 		return this;
 	}
 
+	public String compile () {
+		return this.operator() + "(" + this.argument.compile() + ")";
+	}
+
 	public Expr simplify () {
 		this.argument = this.argument.simplify();
 
@@ -23,5 +27,6 @@ public abstract class UnaryExpr extends Expr {
 		return parent;
 	}
 
+	protected abstract String operator ();
 	protected Expr argument;
 }

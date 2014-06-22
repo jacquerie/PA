@@ -7,7 +7,5 @@ public class ConstExpr extends Expr {
 		return parent.simplify(this, sibling);
 	}
 
-	public boolean isZero () {
-		return Math.abs(this.value - 0) < 0.000001;
-	}
+	public boolean isZero () { return Math.abs(this.value - 0) < 0.000001; }
 }

@@ -49,7 +49,9 @@ public class VectorExpr extends Expr {
 		List<Expr> newElements = new ArrayList<Expr>(this.dimension);
 
 		for (int i = 0; i < this.dimension; i++)
-			newElements.add(i, new AddExpr(this.elements.get(i), that.elements.get(i)));
+			newElements.add(i, new AddExpr(
+				this.elements.get(i),
+				that.elements.get(i)));
 
 		return new VectorExpr(this.dimension, newElements);
 	}

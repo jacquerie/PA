@@ -1,7 +1,5 @@
 public class MulExpr extends BinaryExpr {
-	public MulExpr (Expr first, Expr second) {
-		super(first, second);
-	}
+	public MulExpr (Expr first, Expr second) { super(first, second); }
 
 	public Expr differentiate (Expr dx) {
 		return new AddExpr(
@@ -14,7 +12,5 @@ public class MulExpr extends BinaryExpr {
 		return first.isZero() ? first : this;
 	}
 
-	protected String operator () {
-		return " * ";
-	}
+	protected String operator () { return " * "; }
 }

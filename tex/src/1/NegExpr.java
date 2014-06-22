@@ -1,5 +1,3 @@
 public class NegExpr extends UnaryExpr {
-	public NegExpr (Expr argument) {
-		super(argument);
-	}
+	public NegExpr (Expr argument) { super(argument); }
 }

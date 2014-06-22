@@ -1,7 +1,5 @@
 public class NegExpr extends UnaryExpr {
-	public NegExpr (Expr argument) {
-		super(argument);
-	}
+	public NegExpr (Expr argument) { super(argument); }
 
 	public Expr differentiate (Expr dx) {
 		return new NegExpr(this.argument.differentiate(dx));

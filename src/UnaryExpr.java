@@ -14,7 +14,6 @@ public abstract class UnaryExpr extends Expr {
 
 	public Expr simplify () {
 		this.argument = this.argument.simplify();
-
 		return this.argument.simplify(this);
 	}
 
@@ -22,9 +21,7 @@ public abstract class UnaryExpr extends Expr {
 		return this.argument;
 	}
 
-	public Expr simplify (BinaryExpr parent, Expr sibling) {
-		return parent;
-	}
+	public Expr simplify (BinaryExpr parent, Expr sibling) { return parent; }
 
 	protected abstract String operator ();
 	protected Expr argument;

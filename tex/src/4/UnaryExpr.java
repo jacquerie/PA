@@ -10,7 +10,5 @@ public abstract class UnaryExpr extends Expr {
 		return this.argument;
 	}
 
-	public Expr simplify (BinaryExpr parent, Expr sibling) {
-		return parent;
-	}
+	public Expr simplify (BinaryExpr parent, Expr sibling) { return parent; }
 }

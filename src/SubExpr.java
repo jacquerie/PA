@@ -1,7 +1,5 @@
 public class SubExpr extends BinaryExpr {
-	public SubExpr (Expr first, Expr second) {
-		super(first, second);
-	}
+	public SubExpr (Expr first, Expr second) { super(first, second); }
 
 	public Expr differentiate (Expr dx) {
 		return new SubExpr(this.first.differentiate(dx), this.second.differentiate(dx));
@@ -11,7 +9,5 @@ public class SubExpr extends BinaryExpr {
 		return first.isZero() ? new NegExpr(second) : this;
 	}
 
-	protected String operator () {
-		return " - ";
-	}
+	protected String operator () { return " - "; }
 }

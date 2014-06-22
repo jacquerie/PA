@@ -1,6 +1,11 @@
 \section*{Esercizio 4}
 
-Il codice ottimizzato generato è \texttt{((1.0 * 2.0) * exp(2.5))}.
+Otteniamo il codice ottimizzato \texttt{((1.0 * 2.0) * exp(2.5))}.  Abbiamo
+usato il double dispatch del metodo \mintinline{java}{simplify} per generare la
+chiamata corretta nelle classi concrete \texttt{AddExpr}, \texttt{MulExpr},
+\texttt{SubExpr} e \texttt{NegExpr}. Possiamo semplificare espressioni del tipo
+\texttt{x + 0}, \texttt{x * 0}, \texttt{0 - x} e \texttt{-(-x)}, ma non
+\texttt{(m * n) * x}.
 
 \subsubsection*{Expr.java}
 \inputminted{java}{tex/src/4/Expr.java}

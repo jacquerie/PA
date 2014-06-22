@@ -1,5 +1,12 @@
 \section*{Esercizio 1}
 
+Implementiamo un'espressione applicando l'Interpreter pattern\footnote{Gamma,
+E.; Helm, R.; Johnson, R.; Vlissides, J. (1994). Design Patterns: Elements of
+Reusable Object-Oriented Software. Addison-Wesley. ISBN 0-201-63361-2}, in cui
+le espressioni terminali sono le classi \texttt{DoubleExpr} e
+\texttt{ConstExpr}, la classe \texttt{Function} è il cliente e le restanti
+classi rappresentano espressioni non terminali.
+
 \subsubsection*{Expr.java}
 \inputminted{java}{tex/src/1/Expr.java}
 

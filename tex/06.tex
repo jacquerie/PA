@@ -1,1 +1,11 @@
 \section*{Esercizio 6}
+
+Nei precedenti esercizi abbiamo sfruttato l'ederitarietà per astrarre i metodi
+comuni alle classi concrete come \texttt{AddExpr} e \texttt{ExpExpr} nelle
+classi astratte \texttt{BinaryExpr} e \texttt{UnaryExpr}. Una strategia
+alternativa\footnote{\url{http://www.drdobbs.com/c-expression-templates/184401627}}
+consiste nel far generare a tempo di compilazione le classi concrete dalle
+classi template parametrizzate da un opportuno function object; per esempio
+otteniamo la classe concreta \texttt{AddExpr} in termini del function object
+della Standard Template Libray \mintinline{c++}{plus<double>} come
+\mintinline{c++}{BinaryExpr< Expr first, Expr second, plus<double> >}.

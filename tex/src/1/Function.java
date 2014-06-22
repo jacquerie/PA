@@ -5,9 +5,8 @@ public class Function {
 	}
 
 	public Expr apply (double... values) {
-		for (int i = 0; i < values.length; i++) {
+		for (int i = 0; i < values.length; i++)
 			this.expression = this.expression.apply(arguments[i], values[i]);
-		}
 
 		return this.expression;
 	}

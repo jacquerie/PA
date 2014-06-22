@@ -7,7 +7,6 @@ public abstract class BinaryExpr extends Expr {
 	public Expr apply (Expr target, double value) {
 		this.first = this.first.apply(target, value);
 		this.second = this.second.apply(target, value);
-
 		return this;
 	}
 

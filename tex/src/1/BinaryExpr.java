@@ -1,5 +1,5 @@
 public abstract class BinaryExpr extends Expr {
-	public BinaryExpr (Expr first, Expr second) {
+	protected BinaryExpr (Expr first, Expr second) {
 		this.first = first;
 		this.second = second;
 	}

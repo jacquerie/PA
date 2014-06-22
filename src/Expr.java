@@ -6,15 +6,15 @@ public abstract class Expr {
 	public abstract Expr simplify (UnaryExpr parent);
 	public abstract Expr simplify (BinaryExpr parent, Expr sibling);
 
-	public AddExpr add (Expr other) {
-		return new AddExpr(this, other);
+	public AddExpr add (Expr that) {
+		return new AddExpr(this, that);
 	}
 
-	public MulExpr mul (Expr other) {
-		return new MulExpr(this, other);
+	public MulExpr mul (Expr that) {
+		return new MulExpr(this, that);
 	}
 
-	public SubExpr sub (Expr other) {
-		return new SubExpr(this, other);
+	public SubExpr sub (Expr that) {
+		return new SubExpr(this, that);
 	}
 }

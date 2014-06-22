@@ -1,7 +1,5 @@
 public class SubExpr extends BinaryExpr {
 	// ...
 
-	protected String operator () {
-		return " - ";
-	}
+	protected String operator () { return " - "; }
 }

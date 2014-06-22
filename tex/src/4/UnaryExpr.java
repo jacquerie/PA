@@ -3,7 +3,6 @@ public abstract class UnaryExpr extends Expr {
 
 	public Expr simplify () {
 		this.argument = this.argument.simplify();
-
 		return this.argument.simplify(this);
 	}
 

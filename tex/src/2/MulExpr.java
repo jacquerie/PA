@@ -1,7 +1,5 @@
 public class MulExpr extends BinaryExpr {
 	// ...
 
-	protected String operator () {
-		return " * ";
-	}
+	protected String operator () { return " * "; }
 }

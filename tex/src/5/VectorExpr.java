@@ -42,13 +42,8 @@ public class VectorExpr extends Expr {
 		return this;
 	}
 
-	public Expr simplify (UnaryExpr argument) {
-		return this;
-	}
-
-	public Expr simplify (BinaryExpr parent, Expr sibling) {
-		return this;
-	}
+	public Expr simplify (UnaryExpr argument) { return this; }
+	public Expr simplify (BinaryExpr parent, Expr sibling) { return this; }
 
 	public VectorExpr add (VectorExpr that) {
 		List<Expr> newElements = new ArrayList<Expr>(this.dimension);
